@@ -432,7 +432,7 @@ if (damier.getContext) {
     let green = 255
     let blue = 0
 
-    let rgb = `rgb(${red}, ${green}, ${blue})`
+    // let rgb = `rgb(${red}, ${green}, ${blue})`
     // console.log(rgb)
 
     // Ligne
