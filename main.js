@@ -393,3 +393,65 @@ if (exoMaison.getContext) {
     ctx.closePath()
 
 }
+
+const demo8 = document.getElementById('demo8')
+
+if (demo8.getContext) {
+    const ctx = demo8.getContext('2d')
+
+    const img = new Image()
+
+    img.style.border = "2px solid black"
+
+    console.log(img);
+    img.src = './png.png'
+
+    img.onload = () => {
+        ctx.drawImage(img, 25, 25, 450, 450)
+    }
+
+    demo8.onclick = () => {
+        window.location = demo8.toDataURL('image/png')
+    }
+
+}
+
+const damier = document.getElementById('damier')
+
+if (damier.getContext) {
+    const ctx = damier.getContext('2d')
+
+    const nbCols = 6
+    const nbRows = 6
+
+    let cube = 50
+    let x = 50
+    let y = 50
+
+    let red = 255
+    let green = 255
+    let blue = 0
+
+    let rgb = `rgb(${red}, ${green}, ${blue})`
+    // console.log(rgb)
+
+    // Ligne
+    for (let i = 0; i < nbRows; i++) {
+
+        // Colonnes
+        for (let j = 0; j < nbCols; j++) {
+            x += cube
+
+            ctx.fillStyle = `rgb(${red}, ${green}, ${blue})`
+            green -= 255 / (nbCols - 1)
+            ctx.fillRect(x, y, cube, cube)
+        }
+
+        x = cube
+        y += cube
+
+        green = 255
+        red -= 255 / (nbRows -1)
+    }
+
+}
