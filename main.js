@@ -288,3 +288,108 @@ if (demo7.getContext) {
     ctx.closePath()
 
 }
+
+
+const exoMaison = document.getElementById('exoMaison')
+if (exoMaison.getContext) {
+    const ctx = exoMaison.getContext('2d')
+
+    /*
+        MAISON
+    */
+
+    // Création des murs et du sol
+    ctx.beginPath()
+    ctx.strokeStyle = "red"
+    ctx.lineWidth = 5
+
+    ctx.moveTo(200, 200) // p1
+    ctx.lineTo(200, 300) // p2 => mur de gauche
+    ctx.lineTo(300, 300) // p3 => sol
+    ctx.lineTo(300, 200) // p4 => mur de droite
+
+    ctx.stroke()
+    ctx.closePath()
+
+    // Création de la porte
+    ctx.beginPath()
+
+    ctx.moveTo(240, 300) // P1
+    ctx.lineTo(240, 250) // P2 => côté gauche de ma porte
+    ctx.lineTo(260, 250) // P3 => côté haut de ma porte
+    ctx.lineTo(260, 300) // P4 => côté droite de ma porte
+
+    ctx.stroke()
+    ctx.closePath()
+
+    // Création du toit
+    ctx.beginPath()
+
+    ctx.moveTo(175, 200) // P1
+    ctx.lineTo(250, 125) // P2 => côté gauche de ma porte
+    ctx.lineTo(325, 200) // P3 => côté haut de ma porte
+
+    ctx.stroke()
+    ctx.closePath()
+
+    /*
+        SOLEIL
+    */
+
+    // Cercle
+    ctx.beginPath()
+    ctx.lineWidth = 10
+    ctx.strokeStyle = 'orange'
+    ctx.fillStyle = 'yellow'
+
+    ctx.arc(375, 100, 50, 0, Math.PI * 2)
+
+    ctx.fill()
+    ctx.stroke()
+
+    ctx.closePath()
+
+    // Rayon
+    ctx.beginPath()
+
+    ctx.moveTo(340, 100)
+    ctx.quadraticCurveTo(375, 150, 410, 100)
+
+    ctx.stroke()
+
+    ctx.closePath()
+
+    /*
+        ARBRE
+    */
+
+    ctx.beginPath()
+    ctx.strokeStyle = "lightgreen"
+
+    ctx.moveTo(150, 300)
+    ctx.arcTo(150, 100, 200, 150, 25)
+
+    ctx.stroke()
+
+    ctx.closePath()
+
+
+    /*
+        VAGUES
+    */
+
+    ctx.beginPath()
+    ctx.strokeStyle = 'cyan'
+
+    // Première vague
+    ctx.moveTo(150, 350)
+    ctx.bezierCurveTo(250, 300, 250, 400, 375, 340)
+
+    // Deuxième vague
+    ctx.moveTo(150, 400)
+    ctx.bezierCurveTo(250, 350, 250, 450, 375, 390)
+
+    ctx.stroke()
+    ctx.closePath()
+
+}

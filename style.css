@@ -16,3 +16,10 @@ canvas {
     margin: 10px;
     /*background-color: rgb(226, 226, 226);*/
 }
+
+
+.wrapper {
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
