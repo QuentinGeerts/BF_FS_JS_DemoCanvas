@@ -455,3 +455,29 @@ if (damier.getContext) {
     }
 
 }
+
+const demo9 = document.getElementById('demo9')
+
+if (demo9.getContext) {
+    const ctx = demo9.getContext('2d')
+
+    const degradeLinear = ctx.createLinearGradient(0, 0, 500, 0)
+
+    degradeLinear.addColorStop(0, 'limegreen')
+    degradeLinear.addColorStop(0.5, 'gold')
+    degradeLinear.addColorStop(1, 'orange')
+
+    ctx.fillStyle = degradeLinear
+    ctx.fillRect(0, 0, 500, 100)
+
+    const degradeRadial = ctx.createRadialGradient(250, 250, 0, 250, 250, 360)
+
+    degradeRadial.addColorStop(0, 'limegreen')
+    degradeRadial.addColorStop(0.5, 'gold')
+    degradeRadial.addColorStop(1, 'orange')
+
+    ctx.fillStyle = degradeRadial
+    ctx.fillRect(0, 200, 500, 100)
+
+
+}
